@@ -33,7 +33,7 @@
 | Tracked friends | 3 | 20 | 20 |
 | Price (Telegram Stars) | — | 100 ⭐ / 2 months | 500 ⭐ / 6 months |
 
-When a premium ends, the free plan continues automatically and the first Gmail account keeps receiving mail. The weekly **Fuckgames** Top 3 can claim **Premium 1 free** inside the bot.
+When a premium ends, the free plan continues automatically and the first Gmail account keeps receiving mail. **Telegram Premium users get a free boost: 4 Gmail accounts and 5 tracked friends.** The weekly **Fuckgames** Top 3 can claim **Premium 1 free** inside the bot.
 
 ## Commands
 
