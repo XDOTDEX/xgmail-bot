@@ -69,3 +69,5 @@ Every user gets a personal referral link with /referral. When a new user joins t
 Referrals are verified before credit: the +100 $XOX lands after ~48 hours, only if the referred user stays in the channel and actually uses the bot. Fake accounts do not count.
 
 **Update:** referrals are now instant at **5 $XOX** each (bursts trigger warnings, referrals still count), and /convert turns $XOX into Premium: 50 $XOX = 10 days, 100 $XOX = 30 days.
+
+**Update:** referrals are now **unlimited** - no warnings, no caps. Every referral instantly earns 5 $XOX.
