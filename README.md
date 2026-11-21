@@ -65,3 +65,5 @@ Made by DEメTER
 ## Refer & Earn
 
 Every user gets a personal referral link with /referral. When a new user joins through your link, you earn **100 $XOX** (tracked inside the bot; your balance shows in /status).
+
+Referrals are verified before credit: the +100 $XOX lands after ~48 hours, only if the referred user stays in the channel and actually uses the bot. Fake accounts do not count.
