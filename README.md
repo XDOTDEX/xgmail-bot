@@ -61,3 +61,7 @@ Made by DEメTER
 - The bot **never sees or stores your Gmail password**. There is no password to leak.
 - You can disconnect any account instantly with `/remove`, and you can revoke the bot's access at any time from your Google Account → Security → Third-party access.
 - Mail is fetched through Google's official Gmail API, only for the accounts you connected, and delivered only to your own Telegram chat.
+
+## Refer & Earn
+
+Every user gets a personal referral link with /referral. When a new user joins through your link, you earn **100 $XOX** (tracked inside the bot; your balance shows in /status).
