@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 XMoon Gmail Bot
+# 🤖 Gmail Bot
 
 [![Author](https://img.shields.io/badge/Author-DEメTER-000000?style=for-the-badge)](https://t.me/xdotdexter)
 [![Channel](https://img.shields.io/badge/Channel-@btcmoonx-000000?style=for-the-badge)](https://t.me/btcmoonx)
@@ -71,3 +71,5 @@ Referrals are verified before credit: the +100 $XOX lands after ~48 hours, only 
 **Update:** referrals are now instant at **5 $XOX** each (bursts trigger warnings, referrals still count), and /convert turns $XOX into Premium: 50 $XOX = 10 days, 100 $XOX = 30 days.
 
 **Update:** referrals are now **unlimited** - no warnings, no caps. Every referral instantly earns 5 $XOX.
+
+**Update:** new - @btcmoonx channel posts are now copied to all bot users automatically. Premium users can opt out with /posts off (Free plan always receives them). Messages sent while the bot was off get a maintenance reply.
