@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>XMoon Gmail — Mini App</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --accent:#ff5252;
+    /* Dark void / neon (default) */
+    --bg:#050508; --card:#0d0d17; --card2:#12121f; --line:#23233a;
+    --text:#f2f2fa; --muted:#9a9ab5; --accentText:#ff9e7a;
+    --logoBg:radial-gradient(circle at 30% 30%, #2a0d0d, #0d0d17);
+    --glow:rgba(255,82,82,.35);
+  }
+  html[data-scheme="light"]{
+    --bg:#f3f4f9; --card:#ffffff; --card2:#eceef5; --line:#dcdce8;
+    --text:#15151f; --muted:#5d5d75; --accentText:#d32f2f;
+    --logoBg:radial-gradient(circle at 30% 30%, #ffffff, #ffe7e0);
+    --glow:rgba(255,82,82,.18);
+  }
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:20px 16px 28px; max-width:520px; margin:0 auto;
+    transition:background .25s ease, color .25s ease;
+  }
+  header{ text-align:center; padding:14px 0 6px; }
+  .logo{
+    width:64px; height:64px; margin:0 auto 12px; border-radius:18px;
+    background:var(--logoBg);
+    border:1px solid var(--accent); display:flex; align-items:center; justify-content:center;
+    font-size:30px; box-shadow:0 0 24px var(--glow);
+  }
+  h1{ font-size:24px; letter-spacing:.5px; }
+  .uname{ color:var(--accentText); font-size:14px; margin-top:3px; }
+  .greet{ text-align:center; color:var(--muted); font-size:15px; margin:12px 0 18px; }
+  .greet b{ color:var(--text); }
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:16px; margin-bottom:14px;
+  }
+  .feat{ list-style:none; }
+  .feat li{ padding:7px 0; border-bottom:1px solid var(--line); font-size:14.5px; line-height:1.45; }
+  .feat li:last-child{ border-bottom:none; }
+  .feat li span{ color:var(--muted); font-size:13px; display:block; }
+  .tag{
+    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.6px;
+    padding:3px 8px; border-radius:999px; border:1px solid var(--accent); color:var(--accentText);
+    margin-bottom:10px;
+  }
+  .tier{
+    background:var(--card2); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; margin-bottom:10px;
+  }
+  .tier:last-child{ margin-bottom:0; }
+  .tier b{ font-size:15px; }
+  .tier p{ color:var(--muted); font-size:13.5px; margin-top:3px; line-height:1.5; }
+  .tier .price{ color:var(--accentText); font-weight:700; }
+  .status-note{ color:var(--muted); font-size:13.5px; line-height:1.5; margin-bottom:12px; }
+  .btn{
+    display:block; width:100%; border:none; cursor:pointer; text-align:center;
+    padding:14px; border-radius:12px; font-size:15.5px; font-weight:700;
+    background:linear-gradient(90deg, var(--accent), #d81b60); color:#fff;
+    box-shadow:0 0 18px var(--glow); margin-bottom:10px;
+  }
+  .btn:active{ transform:scale(.98); }
+  .btn.ghost{
+    background:var(--card2); color:var(--text); border:1px solid var(--line); box-shadow:none;
+  }
+  footer{ text-align:center; color:var(--muted); font-size:12.5px; margin-top:20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📬</div>
+  <h1>XMoon Gmail</h1>
+  <div class="uname">@xgmail_github_bot</div>
+</header>
+
+<p class="greet" id="greet">Welcome</p>
+
+<div class="card">
+  <span class="tag">FEATURES</span>
+  <ul class="feat">
+    <li>Multiple Gmail accounts <span>Connect several Gmail accounts to one bot</span></li>
+    <li>Mail in your chat <span>New emails are delivered straight into Telegram</span></li>
+    <li>Code mails, tap to copy <span>Verification codes arrive ready to copy in one tap</span></li>
+    <li>Attachments <span>Download mail attachments from the chat</span></li>
+    <li>Full history kept <span>Your mail history is never deleted</span></li>
+  </ul>
+</div>
+
+<div class="card">
+  <span class="tag">PLANS</span>
+  <div class="tier">
+    <b>Free</b>
+    <p>Connect up to <b>3</b> Gmail accounts</p>
+  </div>
+  <div class="tier">
+    <b>Premium 1</b> · <span class="price">100 Stars / 2 months</span>
+    <p>Connect up to <b>20</b> Gmail accounts</p>
+  </div>
+  <div class="tier">
+    <b>Premium 2</b> · <span class="price">500 Stars / 6 months</span>
+    <p><b>Unlimited</b> Gmail accounts</p>
+  </div>
+</div>
+
+<div class="card">
+  <span class="tag">YOUR STATUS</span>
+  <p class="status-note">Your connected accounts and current plan are shown inside the bot. Tap below to view them.</p>
+  <button class="btn" onclick="openBot()">View My Accounts in Bot</button>
+</div>
+
+<button class="btn" onclick="openBot()">Open Gmail Bot</button>
+<button class="btn ghost" onclick="closeApp()">Close</button>
+
+<footer>Made by DEメTER</footer>
+
+<script>
+  var tg = window.Telegram.WebApp;
+
+  function applyTheme() {
+    var scheme = tg.colorScheme === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-scheme', scheme);
+    var p = tg.themeParams || {};
+    var s = document.documentElement.style;
+    if (p.bg_color) s.setProperty('--bg', p.bg_color);
+    if (p.secondary_bg_color) s.setProperty('--card', p.secondary_bg_color);
+    if (p.text_color) s.setProperty('--text', p.text_color);
+    if (p.hint_color) s.setProperty('--muted', p.hint_color);
+    if (tg.setBackgroundColor && p.bg_color) {
+      try { tg.setBackgroundColor(p.bg_color); } catch (e) {}
+    }
+  }
+
+  tg.ready();
+  tg.expand();
+  applyTheme();
+  tg.onEvent('themeChanged', applyTheme);
+
+  var user = tg.initDataUnsafe && tg.initDataUnsafe.user;
+  if (user && user.first_name) {
+    document.getElementById('greet').innerHTML = 'Hi, <b>' + user.first_name.replace(/</g,'&lt;') + '</b> — your inbox, inside Telegram.';
+  }
+  function openBot() {
+    tg.openTelegramLink('https://t.me/xgmail_github_bot?start=from_miniapp');
+  }
+  function closeApp() { tg.close(); }
+</script>
+</body>
+</html>
